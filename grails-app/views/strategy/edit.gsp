@@ -53,21 +53,27 @@
                     <span class="button"><g:actionSubmit class="delete" onclick="return confirm('Are you sure?');" value="Delete" /></span>
 	                <span class="button"><g:actionSubmit value="Test" /></span>
                 </div>
+				<g:if test="${testResults}">
 				<div class="list">
 		            <h1>Test Results</h1>
 					<table>
 						<thead>
 						<tr>
-							<th>1st</th> <th>2nd</th> <th>3rd</th> <th>4th</th> <th>5th</th>
+							<g:each in="${testResults}" status="i" var="result">
+								<th>#${i+1}</th>
+							</g:each>
 						</tr>
 						</thead>
 						<tbody>
 						<tr>
-							<td>1st</td> <td>2nd</td> <td>3rd</td> <td>4th</td> <td>5th</td>
+							<g:each in="${testResults}" status="i" var="result">
+								<th>${result.errorMessage ?: result.hand}</th>
+							</g:each>
 						</tr>
 						</tbody>
 					</table>
 				</div>
+				</g:if>
             </g:form>
         </div>
     </body>

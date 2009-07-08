@@ -8,6 +8,8 @@ class StrategyController {
 	def persistenceManager
 
     def loginUser
+
+    def strategyService
     
     def index = { redirect(controller:'dashboard') }
 
@@ -75,8 +77,8 @@ class StrategyController {
 
     def test = {
         def strategy = new Strategy(params)
-        def testResults = ['G', 'C', 'P', 'C', 'P']
-		render(view:'edit', model:[strategy:strategy, testResults:testResults])
+        strategy.key = createKey()
+		render(view:'edit', model:[strategy:strategy, testResults:strategyService.test(strategy)])
     }
 
     private createKey() {

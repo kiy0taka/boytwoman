@@ -10,7 +10,6 @@ class DashboardController {
     def loginUser
 
     def index = {
-        println new ScriptEngineManager().getEngineByName('js')
         if (!loginUser) {
             loginUser = new User(email:UserServiceFactory.userService.currentUser.email)
             jdoTemplate.makePersistent(loginUser)
