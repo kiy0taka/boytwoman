@@ -29,7 +29,7 @@
                 </table>
             </div>
             <div class="buttons">
-                <g:form>
+                <g:form action="entry" method="post">
 					<g:select name="strategy.id" from="${strategies}" keys="${strategies.collect {it.key.id}}" optionValue="name" noSelection="['':'- Random -']"/>
                     <input type="hidden" name="id" value="${game?.key?.id}" />
                     <span class="button"><g:actionSubmit value="Entry" /></span>

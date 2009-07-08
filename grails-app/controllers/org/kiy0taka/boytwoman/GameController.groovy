@@ -98,6 +98,6 @@ class GameController {
     }
 
     private createKey() {
-        params.id.toLong()
+        KeyFactory.createKey(Game.simpleName, params.id.toLong())
     }
 }

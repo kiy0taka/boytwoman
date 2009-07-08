@@ -13,7 +13,7 @@ class StrategyController {
     
     def index = { redirect(controller:'dashboard') }
 
-    static allowedMethods = [delete:'POST', save:'POST', update:'POST']
+    static allowedMethods = [delete:'POST', save:'POST', update:'POST', run:'POST']
 
     def delete = {
         try {

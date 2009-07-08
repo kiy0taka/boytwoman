@@ -10,6 +10,6 @@ class UserService {
 
     def getLoginUser() {
         return jdoTemplate.find(User, "email == emailParam", "String emailParam",
-            [emailParam:UserServiceFactory.userService.currentUser.email])[0]
+            [emailParam:UserServiceFactory.userService?.currentUser?.email])[0]
     }
 }

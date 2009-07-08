@@ -35,13 +35,13 @@ grails.enable.native2ascii = true
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://www.changeme.com"
+        grails.serverURL = "http://boytwoman.appspot.com/"
     }
     development {
-        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.serverURL = "http://localhost:8080/"
     }
     test {
-        grails.serverURL = "http://localhost:8080/${appName}"
+        grails.serverURL = "http://localhost:8080/"
     }
 
 }
@@ -69,7 +69,4 @@ log4j = {
     warn   'org.mortbay.log'
 }
 
-google.appengine.security.requireLogin = ["/dashboard/"]
-
-
-     
+google.appengine.security.requireLogin = ['/dashboard/*', '/strategy/*']
